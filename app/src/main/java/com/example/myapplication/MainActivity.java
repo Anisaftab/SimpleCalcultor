@@ -18,14 +18,14 @@ import javax.script.ScriptException;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn1, btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btn_dec, btn_clear, btn_plus,btn_mult ,btn_div,btn_min, btn_equal;
     TextView text_display;
-    ScriptEngine engine;
+    Evaluator evaluator;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        engine = new ScriptEngineManager().getEngineByName("rhino");
+        evaluator = new Evaluator();
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
@@ -138,8 +138,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private String evaluate(String expression) throws ScriptException {
-        String result = engine.eval(expression).toString();
-        BigDecimal decimal = new BigDecimal(result);
+
+        BigDecimal decimal = evaluator.evaluate(expression);
+
         return decimal.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString();
     }
 
