@@ -12,7 +12,7 @@
         android:layout_height="149dp"
         android:layout_marginBottom="268dp"
         android:hint="@string/display"
-        android:textColorHint="#B9DCEA"
+        android:textColorHint="@color/black"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout12"
         app:layout_constraintEnd_toEndOf="parent"
