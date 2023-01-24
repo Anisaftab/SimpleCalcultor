@@ -1,9 +1,9 @@
 # SimpleCalculator
 This is a simple functional Android Calculator.
-Contributors:
-Anisaftab Saiyed,
-Mostafa,
-Olivia, 
-Alex Clements
 
-Lab1:SEG2105 
+## Screenshots
+![Home Page](img/calculator.png)
+![Calculations](img/calc.png)
+![Result Page](img/result.png)
+
+
